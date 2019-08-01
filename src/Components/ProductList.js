@@ -10,7 +10,7 @@ function ProductList(props) {
             <h3 className="product__name">{el.name}</h3>
             <p className="product__lable">{el.label}</p>
             <p className="product__price">{el.price}</p>
-            <button onClick={addToBasket()}>Add</button>
+            <button onClick={()=> {addToBasket(el)}}>Add</button>
             </li>
            ))}
         </ul>

@@ -8,29 +8,47 @@ class App extends React.Component {
   constructor(){
     super()
     this.state = {
-      basketCount: null,
+      basket: [],
+      number: 1
     }
   }
 
-  addToBasket = () => {
-    let count = 1;
-    this.setState( {
-      // let count = prevStae.basketCount + 1;
-     
-        basketCount: count
+  addToBasket = (el) => {
+   
+    
+    this.setState(prevState => {
+      let { basket, number } = prevState;
+      if( basket.indexOf(el) === -1 ){
+        let newBasket =  basket.concat(el);
+        el.number++;
+        return{
+          basket: newBasket
+         }
       
+      }else{
+        el.number = number + 1;
+        return{
+          number: el.number
+        }
+      }
+      
+
+
+
+    
+  
+
     })
   }
 
 
   render(){
-      let { basketCount } = this.state;
-
+      let { basket } = this.state;
+      console.log(basket);
     return (
       <div className="App">
-        <Basket data={data} basketCount={basketCount} />
         <ProductList data={data}  addToBasket = {this.addToBasket} />
-
+        <Basket data={data} basket={basket} />
       </div>
     );
   }
