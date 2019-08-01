@@ -14,7 +14,11 @@ class Basket extends React.Component{
         // console.timeLog(basket)
          return(
              <div className ="basket">
-                 <h1>{basket.length}</h1>  
+                 <h1>
+                 {basket.reduce((sum, el) => {
+                     return sum + el.number;
+                 }, 0 )}
+                 </h1>  
              </div>
         )}
    

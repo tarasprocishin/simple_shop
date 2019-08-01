@@ -9,24 +9,24 @@ class App extends React.Component {
     super()
     this.state = {
       basket: [],
-      number: 1
+      number: null
     }
   }
 
   addToBasket = (el) => {
-   
-    
     this.setState(prevState => {
       let { basket, number } = prevState;
+ 
       if( basket.indexOf(el) === -1 ){
+        el.number = 1;
         let newBasket =  basket.concat(el);
-        el.number++;
         return{
-          basket: newBasket
+          basket: newBasket,
+          number: el.number
          }
       
       }else{
-        el.number = number + 1;
+        el.number++;
         return{
           number: el.number
         }
