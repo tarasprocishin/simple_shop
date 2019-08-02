@@ -11,7 +11,7 @@ class Basket extends React.Component{
     }
 
     render() {
-        let { basket, toggle, goToBasket } = this.props;
+        let { basket, toggle, goToBasket, removeFromBasket } = this.props;
         
       
          return(
@@ -24,6 +24,7 @@ class Basket extends React.Component{
                     basket = {basket}
                     toggle = {toggle}
                     goToBasket = {goToBasket}
+                    removeFromBasket = {removeFromBasket}
                  />
 
              </div>

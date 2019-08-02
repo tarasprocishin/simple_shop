@@ -17,7 +17,7 @@ class App extends React.Component {
   addToBasket = (el) => {
     this.setState(prevState => {
 
-      let { basket, number } = prevState; 
+      let { basket } = prevState; 
 
       if( basket.indexOf(el) === -1 ){
         el.number = 1;
@@ -33,6 +33,25 @@ class App extends React.Component {
     })
   }
 
+  removeFromBasket  = (el) => {
+    this.setState(prevState => {
+      let { basket } = prevState; 
+      if( basket.indexOf(el) === -1 ){
+        return;
+      }
+
+      if(el.number > 1 ){
+        el.number--;
+        return { number: el.number };
+      }
+
+       basket.splice(basket.indexOf(el), 1);
+      return {
+        basket: basket
+      } 
+    })
+  }
+
   goToBasket = () => {
     this.setState(prevState => (
        {toggle: !prevState.toggle} 
@@ -45,14 +64,18 @@ class App extends React.Component {
       <div className="App">
         {toggle 
         ? <ProductList 
-         data={data} 
-         addToBasket={this.addToBasket} />: null }
+            data={data} 
+            addToBasket={this.addToBasket}
+            removeFromBasket={this.removeFromBasket} 
+         />
+         : null }
      
         <Basket 
-        data={data}
-        basket={basket}
-        toggle={toggle}
-        goToBasket = {this.goToBasket}
+          data={data}
+          basket={basket}
+          toggle={toggle}
+          goToBasket={this.goToBasket}
+          removeFromBasket={this.removeFromBasket}
         />
       </div>
     );
