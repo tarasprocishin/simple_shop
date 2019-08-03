@@ -7,12 +7,20 @@ import './App.css';
 class App extends React.Component {
   constructor(){
     super()
+
     this.state = {
       basket: [],
       number: null,
       toggle: true
     }
   }
+
+  componentDidMount() {
+    const storage = JSON.parse(localStorage.getItem('basket'));
+    this.setState({ basket: storage })
+  }
+
+
 
   addToBasket = (el) => {
     this.setState(prevState => {
@@ -22,12 +30,14 @@ class App extends React.Component {
       if( basket.indexOf(el) === -1 ){
         el.number = 1;
         let newBasket =  basket.concat(el);
+        localStorage.setItem("basket", JSON.stringify(newBasket))
         return {
           basket: newBasket,
           number: el.number
           }    
       }else{
         el.number++;
+        localStorage.setItem("basket", JSON.stringify(basket))
         return { number: el.number };
       }
     })
@@ -42,10 +52,13 @@ class App extends React.Component {
 
       if(el.number > 1 ){
         el.number--;
+        localStorage.setItem("basket", JSON.stringify(basket))
         return { number: el.number };
+
       }
 
        basket.splice(basket.indexOf(el), 1);
+       localStorage.setItem("basket", JSON.stringify(basket))
       return {
         basket: basket
       } 
@@ -60,6 +73,8 @@ class App extends React.Component {
 
   render(){
       let { basket, toggle } = this.state;
+     
+  
     return (
       <div className="App">
         {toggle 
