@@ -1,7 +1,7 @@
 import React from 'react';
 
 function ProductList(props) {
-    let { data, addToBasket, removeFromBasket } = props;
+    let { data, addToBasket } = props;
        
     return(
         <ul>

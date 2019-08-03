@@ -85,7 +85,6 @@ class App extends React.Component {
             addToBasket={this.addToBasket}
          />
          : null }
-     
         <Basket 
           number={number}
           data={data}
