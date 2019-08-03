@@ -11,20 +11,21 @@ class Basket extends React.Component{
     }
 
     render() {
-        let { basket, toggle, goToBasket, removeFromBasket } = this.props;
+        let { basket, toggle, goToBasket, removeFromBasket, number } = this.props;
         
       
          return(
              <div className ="basket">
                 <BasketIcon 
-                    basket = {basket} 
+                    basket={basket} 
                     toggle={toggle} 
                  />
                 <BasketMain 
-                    basket = {basket}
-                    toggle = {toggle}
-                    goToBasket = {goToBasket}
-                    removeFromBasket = {removeFromBasket}
+                    basket={basket}
+                    number={number}
+                    toggle={toggle}
+                    goToBasket={goToBasket}
+                    removeFromBasket={removeFromBasket}
                  />
 
              </div>

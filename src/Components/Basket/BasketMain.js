@@ -1,8 +1,8 @@
 import React from 'react';
 
 function BasketMain (props) {
-    let { goToBasket, toggle, basket, removeFromBasket } = props;
-
+    let { goToBasket, toggle, basket, removeFromBasket, number } = props;
+    console.log(number)
     return (
         <>
             <button onClick={() => {goToBasket()}}>{toggle ? "go to basket" : "return" } </button>
@@ -28,10 +28,7 @@ function BasketMain (props) {
                  <button>Buy</button>
               </p>
             }
-
-     
-           
-           
+            {toggle || number ? null: <h2>Basket is Empty :(</h2>}      
     </>
 
     )

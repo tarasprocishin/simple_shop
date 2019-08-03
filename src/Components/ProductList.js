@@ -1,8 +1,8 @@
 import React from 'react';
 
 function ProductList(props) {
-    let { data, addToBasket } = props;
-   
+    let { data, addToBasket, removeFromBasket } = props;
+       
     return(
         <ul>
             {data.map(el => (

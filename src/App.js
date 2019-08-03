@@ -10,7 +10,7 @@ class App extends React.Component {
 
     this.state = {
       basket: [],
-      number: null,
+      number: 0,
       toggle: true
     }
   }
@@ -49,7 +49,6 @@ class App extends React.Component {
       if( basket.indexOf(el) === -1 ){
         return;
       }
-      console.log(basket)
 
       if(el.number > 1 ){
         el.number--;
@@ -59,8 +58,10 @@ class App extends React.Component {
       }
 
        basket.splice(basket.indexOf(el), 1);
+       el.number = 0;
        localStorage.setItem("basket", JSON.stringify(basket))
       return {
+        number: el.number,
         basket: basket
       } 
     })
@@ -73,8 +74,7 @@ class App extends React.Component {
 }
 
   render(){
-      let { basket, toggle } = this.state;
-      console.log(basket)
+      let { basket, toggle, number } = this.state;
      
   
     return (
@@ -87,6 +87,7 @@ class App extends React.Component {
          : null }
      
         <Basket 
+          number={number}
           data={data}
           basket={basket}
           toggle={toggle}
