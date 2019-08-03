@@ -1,7 +1,7 @@
 import React from 'react';
 
 function ProductList(props) {
-    let { data, addToBasket, removeFromBasket } = props;
+    let { data, addToBasket } = props;
    
     return(
         <ul>
@@ -11,7 +11,6 @@ function ProductList(props) {
             <p className="product__lable">{el.label}</p>
             <p className="product__price">{el.price}</p>
             <button onClick={()=> {addToBasket(el)}}>Add</button>
-            <button onClick={()=> {removeFromBasket(el)}}>Remove</button>
             </li>
            ))}
         </ul>

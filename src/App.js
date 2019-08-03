@@ -49,6 +49,7 @@ class App extends React.Component {
       if( basket.indexOf(el) === -1 ){
         return;
       }
+      console.log(basket)
 
       if(el.number > 1 ){
         el.number--;
@@ -73,6 +74,7 @@ class App extends React.Component {
 
   render(){
       let { basket, toggle } = this.state;
+      console.log(basket)
      
   
     return (
@@ -81,7 +83,6 @@ class App extends React.Component {
         ? <ProductList 
             data={data} 
             addToBasket={this.addToBasket}
-            removeFromBasket={this.removeFromBasket} 
          />
          : null }
      
