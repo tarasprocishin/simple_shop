@@ -28,7 +28,7 @@ function BasketMain (props) {
                  <button>Buy</button>
               </p>
             }
-            {toggle || number ? null: <h2>Basket is Empty :(</h2>}      
+            {toggle || basket.length ? null: <h2>Basket is Empty :(</h2>}      
     </>
 
     )
