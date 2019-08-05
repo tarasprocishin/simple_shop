@@ -15,8 +15,9 @@ class Basket extends React.Component{
         
       
          return(
-             <div className ="basket">
-                <BasketIcon 
+             <section className="basket">
+                 <div className="container">
+                 <BasketIcon 
                     basket={basket} 
                     toggle={toggle} 
                     goToBasket={goToBasket}
@@ -28,8 +29,12 @@ class Basket extends React.Component{
                     goToBasket={goToBasket}
                     removeFromBasket={removeFromBasket}
                  />
+                 </div>
+             </section>
+            
 
-             </div>
+
+         
         )}
    
 }

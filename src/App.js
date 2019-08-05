@@ -28,7 +28,6 @@ class App extends React.Component {
       let { basket } = prevState; 
       
       let found  = basket.find(item => item.id === el.id)
-      // console.log(basket)
 
       if( !found ){
         el.number = 1;
@@ -39,7 +38,6 @@ class App extends React.Component {
           number: el.number
         }    
       }else{
-        // console.log(found)
         found.number++;
         localStorage.setItem("basket", JSON.stringify(basket))
         return { 
@@ -84,13 +82,7 @@ class App extends React.Component {
      
   
     return (
-      <div className="App">
-        {toggle 
-        ? <ProductList 
-            data={data} 
-            addToBasket={this.addToBasket}
-         />
-         : null }
+      <main className="App">
         <Basket 
           number={number}
           data={data}
@@ -99,7 +91,13 @@ class App extends React.Component {
           goToBasket={this.goToBasket}
           removeFromBasket={this.removeFromBasket}
         />
-      </div>
+        {toggle 
+        ? <ProductList 
+            data={data} 
+            addToBasket={this.addToBasket}
+         />
+         : null }
+      </main>
     );
   }
 
