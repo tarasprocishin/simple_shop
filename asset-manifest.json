@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/simple_shop/static/css/main.31df4810.chunk.css",
+    "main.js": "/simple_shop/static/js/main.eb62e891.chunk.js",
+    "main.js.map": "/simple_shop/static/js/main.eb62e891.chunk.js.map",
+    "runtime~main.js": "/simple_shop/static/js/runtime~main.b653f5d1.js",
+    "runtime~main.js.map": "/simple_shop/static/js/runtime~main.b653f5d1.js.map",
+    "static/js/2.d6a534e5.chunk.js": "/simple_shop/static/js/2.d6a534e5.chunk.js",
+    "static/js/2.d6a534e5.chunk.js.map": "/simple_shop/static/js/2.d6a534e5.chunk.js.map",
+    "index.html": "/simple_shop/index.html",
+    "precache-manifest.2527e81956531364176388c5da9db390.js": "/simple_shop/precache-manifest.2527e81956531364176388c5da9db390.js",
+    "service-worker.js": "/simple_shop/service-worker.js",
+    "static/css/main.31df4810.chunk.css.map": "/simple_shop/static/css/main.31df4810.chunk.css.map",
+    "static/media/App.css": "/simple_shop/static/media/fontello.f8b504e6.ttf"
+  }
+}
