@@ -2,7 +2,7 @@ import React from 'react';
 import data from './server/data';
 import Basket from './Components/Basket';
 import ProductList from './Components/ProductList';
-import './App.css';
+import './css/App.css';
 
 class App extends React.Component {
   constructor(){
@@ -26,19 +26,25 @@ class App extends React.Component {
     this.setState(prevState => {
 
       let { basket } = prevState; 
+      
+      let found  = basket.find(item => item.id === el.id)
+      // console.log(basket)
 
-      if( basket.indexOf(el) === -1 ){
+      if( !found ){
         el.number = 1;
         let newBasket =  basket.concat(el);
         localStorage.setItem("basket", JSON.stringify(newBasket))
         return {
           basket: newBasket,
           number: el.number
-          }    
+        }    
       }else{
-        el.number++;
+        // console.log(found)
+        found.number++;
         localStorage.setItem("basket", JSON.stringify(basket))
-        return { number: el.number };
+        return { 
+            number: el.number, 
+                              };
       }
     })
   }

@@ -19,6 +19,7 @@ class Basket extends React.Component{
                 <BasketIcon 
                     basket={basket} 
                     toggle={toggle} 
+                    goToBasket={goToBasket}
                  />
                 <BasketMain 
                     basket={basket}

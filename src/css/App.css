@@ -1,0 +1,26 @@
+@import "fontello.css";
+
+
+.App {
+  text-align: center;
+}
+
+.basket__icon{
+  position: relative;
+}
+
+.icon-basket {
+  font-size: 32px;
+}
+
+.counter {
+  background: red;
+  position: absolute;
+  bottom: 30px;
+  border-radius: 15px;
+  width: 23px;
+  height: 23px;
+  line-height: 23px;
+  font-size: 16px;
+
+}

@@ -5,7 +5,7 @@ function BasketMain (props) {
     console.log(number)
     return (
         <>
-            <button onClick={() => {goToBasket()}}>{toggle ? "go to basket" : "return" } </button>
+            {toggle ? null :<button onClick={() => {goToBasket()}}> return </button> }
      
             {toggle
                 ? null
